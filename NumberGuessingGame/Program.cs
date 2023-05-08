@@ -8,16 +8,14 @@ namespace NumberGuessingGame
         {
             Random random = new();
             int randomNumber = random.Next(1, 101);
-            int guess;
             Console.WriteLine("Guess a number between 1 and 100");
             //Console.WriteLine(randomNumber); // TODO: Husk å fjerne denne linja!!
 
             while (true)
             {
                 Console.WriteLine("Write your number:");
-                //guess = Convert.ToInt32(Console.ReadLine());
-                string input = Console.ReadLine();
-                if (int.TryParse(input, out guess))
+                string? input = Console.ReadLine();
+                if (int.TryParse(input, out int guess))
                 {
                     if (guess > randomNumber)
                     {
